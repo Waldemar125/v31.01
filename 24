@@ -1,0 +1,2 @@
+s = open('24.txt').readline().replace('KL', ' ').replace('LK', ' ')
+print(max([len(i) for i in s.split()]))
