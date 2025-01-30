@@ -1,0 +1,11 @@
+s = [int(i) for i in open('17 (3).txt').readlines()]
+mn = min([i for i in s if str(i)[-1] == str(i)[-2]]) ** 2
+k, m = 0, 0
+for i in range(len(s) - 1):
+    a, b = s[i], s[i + 1]
+    if str(a)[-1] == str(b)[-2] or str(a)[-2] == str(b)[-1]:
+        if [abs(j) % 7 == 0 for j in (a, b)].count(True) == 1:
+            if a ** 2 + b ** 2 <= mn:
+                k += 1
+                m = max(m, a ** 2 + b ** 2)
+print(k, m)
