@@ -1,0 +1,9 @@
+f = open('Аркадий и Борис Стругацкие.txt', encoding='utf-8').readlines()
+s = [i.strip().split() for i in f]
+a = []
+for i in range(len(s)):
+    if len(s[i]) > 0:
+        for j in range(len(s[i])):
+            a.append(s[i][j].lower())
+b = [i for i in a if i[0] == 'а' and i[-1] == 'я']
+print(len(b))
