@@ -1,0 +1,8 @@
+for n in range(100, 10000):
+    n1 = str(n)
+    nl = []
+    for i in range(len(n1) - 2):
+        nl.append(int(n1[i] + n1[i + 1] + n1[i + 2]))
+    r = max(nl) - min(nl)
+    if r == 623:
+        print(n)
