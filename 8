@@ -1,0 +1,7 @@
+from itertools import product
+s = list(product('БЕЛКА', repeat=4))
+k = 0
+for x in s:
+    if x.count('Б') == 1:
+        k += 1
+print(k)
