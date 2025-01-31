@@ -1,0 +1,21 @@
+s = open('26.txt').readlines()
+k, c = int(s[0].strip().split()[0]), int(s[0].strip().split()[1])
+s = s[1:len(s)]
+s = [i.strip().split() for i in s]
+d = {'A': sorted([int(i[0]) for i in s if i[1] == 'A'], reverse=True),
+     'B': sorted([int(i[0]) for i in s if i[1] == 'B'], reverse=True)}
+kb = 0
+while True:
+    m = min(d['A'][-1], d['B'][-1])
+    c -= m
+    if c < 0: break
+    if d['A'][-1] == d['B'][-1]:
+        kb += 1
+        d['B'].pop(-1)
+    else:
+        if m == d['A'][-1]:
+            d['A'].pop(-1)
+        else:
+            kb += 1
+            d['A'].pop(-1)
+print(kb, c + m)
